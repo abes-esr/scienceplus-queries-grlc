@@ -6,7 +6,7 @@
 
 # cf. https://github.com/CLARIAH/grlc/issues/322#issuecomment-796003965
 
-# Exemple : 0000-0003-0885-7933 (orcid)
+# Exemple : 0000-0001-5622-7288 (orcid)
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
