@@ -1,0 +1,16 @@
+#+ summary: byidref
+#+ endpoint_in_url: False
+#+ endpoint: https://scienceplus.abes.fr/sparql
+#+ tags:
+#+   - identifier
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX v: <http://www.w3.org/2006/vcard/ns#>
+
+SELECT ?oeuvre ?titre ?role  
+WHERE 
+ {  
+      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?_idrefuri_iri ; v:hasRole ?role] .
+ }
+ LIMIT 10
