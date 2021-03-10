@@ -16,7 +16,7 @@ SELECT ?oeuvre ?titre ?role
 WHERE 
  {  
       OPTIONAL { ?s ?p ?_orcidid }
-      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?_orciduri ; v:hasRole ?role] .
-      FILTER(?_orciduri = URI(CONCAT('http://orcid.org/', ?_orcidid, '#person')))
+      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?orciduri ; v:hasRole ?role] .
+      FILTER(?orciduri = URI(CONCAT('http://orcid.org/', ?_orcidid, '#person')))
  }
  LIMIT 10
