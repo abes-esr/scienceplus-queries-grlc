@@ -4,6 +4,10 @@
 #+ tags:
 #+   - identifier
 
+# cf. https://github.com/CLARIAH/grlc/issues/322#issuecomment-796003965
+
+# Example : 184032997 (idref)
+
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX v: <http://www.w3.org/2006/vcard/ns#>
@@ -11,6 +15,8 @@ PREFIX v: <http://www.w3.org/2006/vcard/ns#>
 SELECT ?oeuvre ?titre ?role  
 WHERE 
  {  
-      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?_idrefuri_iri ; v:hasRole ?role] .
+      OPTIONAL { ?s ?p ?_idrefid }
+      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?idrefuri ; v:hasRole ?role] .
+      FILTER(?idrefuri = URI(CONCAT('http://www.idref.fr/', ?_idrefid, '/id')))
  }
  LIMIT 10
