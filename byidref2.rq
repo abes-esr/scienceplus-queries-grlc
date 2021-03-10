@@ -1,3 +1,9 @@
+#+ summary: byidref2
+#+ endpoint_in_url: False
+#+ endpoint: https://scienceplus.abes.fr/sparql
+#+ tags:
+#+   - identifier
+
 SELECT ?oeuvre ?titre ?role  
 WHERE 
  {  
