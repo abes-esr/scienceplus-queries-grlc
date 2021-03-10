@@ -1,0 +1,8 @@
+SELECT ?oeuvre ?titre ?role  
+WHERE 
+ {  
+      OPTIONAL { ?s ?p ?_idrefid }
+      ?oeuvre dcterms:title ?titre ; vivo:relatedBy [vivo:relates ?idrefuri ; v:hasRole ?role] .
+      FILTER(?idrefuri = URI(CONCAT('http://www.idref.fr/', ?_idrefid, '/id')))
+ }
+ LIMIT 10
